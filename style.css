@@ -104,6 +104,54 @@ footer{border-top:1px solid #d9bb7b18;max-width:1080px;margin:0 auto;padding:24p
   isolation: isolate;
 }
 .hero-portrait::before { content: none; }
+.role-wolf { --role-ink: #dc9c8d; }
+.role-madman { --role-ink: #c4a5d4; }
+.role-citizen { --role-ink: #debf81; }
+.role-knight { --role-ink: #9ebfd7; }
+.role-seer { --role-ink: #a9d2bc; }
+.role-medium { --role-ink: #c2c6df; }
+.role-seal {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--role-ink, var(--gold));
+  border-radius: 4px;
+  color: var(--role-ink, var(--gold));
+  background: #121918;
+  font: 1.125rem/1 "Yu Mincho", "Hiragino Mincho ProN", serif;
+  box-shadow: inset 0 0 0 3px #121918, inset 0 0 0 4px #ffffff18;
+}
+.role-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 55%);
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 180px;
+  margin: 22px 0;
+  border: 1px solid var(--role-ink);
+  border-radius: 6px;
+  background: #101514;
+}
+.role-card::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid #d9bb7b2e;
+  border-radius: 2px;
+  pointer-events: none;
+}
+.role-card-copy { position: relative; z-index: 1; padding: 20px 0 20px clamp(16px, 4vw, 30px); }
+.role-card-copy h2 { margin: 10px 0 0; color: var(--role-ink); font-size: clamp(1.45rem, 5vw, 2.25rem); }
+.role-card-copy p { margin: 2px 0 0; color: var(--muted); font-size: .875rem; }
+.role-card > img {
+  width: 100%;
+  height: clamp(180px, 34vw, 255px);
+  object-fit: contain;
+  mask-image: linear-gradient(90deg, transparent, #000 16%);
+}
 .hero-portrait .hero-cat {
   width: 100%;
   max-width: none;
