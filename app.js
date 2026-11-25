@@ -59,7 +59,7 @@
   }
   function setupScreen() {
     app.className = '';
-    app.innerHTML = `<section class="hero cat-hero"><div class="hero-copy"><p class="eyebrow">NYANWOLF NIGHT <span>／ 秘密の人狼会</span></p><h1>今夜は、<br><em>誰が</em>化けている？</h1><p class="lede">そのまなざしに、秘密がある。<br>配役も、夜も、投票も。この1台で。</p><div class="hero-features"><span>GMレス</span><span>対面プレイ</span><span>1台で完結</span></div></div><div class="hero-art"><span class="orbit orbit-outer" aria-hidden="true"></span><span class="orbit orbit-inner" aria-hidden="true"></span><img class="hero-cat" src="cat.svg?v=2" alt="月の下で金色の目を光らせる黒猫"><span class="art-caption" aria-hidden="true">TRUST NO ONE. EXCEPT THE CAT.</span></div></section>
+    app.innerHTML = `<section class="hero cat-hero"><div class="hero-copy"><p class="eyebrow">NYANWOLF NIGHT <span>／ 秘密の人狼会</span></p><h1>今夜は、<br><em>誰が</em>化けている？</h1><p class="lede">そのまなざしに、秘密がある。<br>配役も、夜も、投票も。この1台で。</p><div class="hero-features"><span>GMレス</span><span>対面プレイ</span><span>1台で完結</span></div></div><div class="hero-art hero-portrait"><img class="hero-cat" src="moonlit-cat.jpg" width="1254" height="1254" alt="月明かりの中で、長いしっぽを曲げて横目で見つめる黒猫"></div></section>
       ${notice ? `<div class="notice error" role="alert">${html(notice)}</div>` : ''}
       ${unreadableSave ? button('保存データを削除', 'erase', 'secondary') : ''}
       <div class="setup-heading"><h2>秘密の夜を、準備する。</h2><span>GAME SETUP</span></div><div class="setup-grid"><section class="panel"><div class="panel-header"><h2>参加者</h2><span class="pill" id="name-count"></span></div>
