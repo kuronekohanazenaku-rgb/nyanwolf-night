@@ -59,14 +59,14 @@
   }
   function setupScreen() {
     app.className = '';
-    app.innerHTML = `<section class="hero cat-hero"><div><span class="pill">GMレス · 対面プレイ</span><p class="eyebrow">NYANWOLF NIGHT</p><h1>今夜は、<br>誰が化けている？</h1><p class="lede">黒にゃんこと、秘密の人狼会。<br>配役も、夜も、投票も。この1台が進行します。</p></div><img class="hero-cat" src="cat.svg" alt="月の下で金色の目を光らせる黒猫"></section>
+    app.innerHTML = `<section class="hero cat-hero"><div class="hero-copy"><p class="eyebrow">NYANWOLF NIGHT <span>／ 秘密の人狼会</span></p><h1>今夜は、<br><em>誰が</em>化けている？</h1><p class="lede">そのまなざしに、秘密がある。<br>配役も、夜も、投票も。この1台で。</p><div class="hero-features"><span>GMレス</span><span>対面プレイ</span><span>1台で完結</span></div></div><div class="hero-art"><span class="orbit orbit-outer" aria-hidden="true"></span><span class="orbit orbit-inner" aria-hidden="true"></span><img class="hero-cat" src="cat.svg" alt="月の下で金色の目を光らせる黒猫"><span class="art-caption" aria-hidden="true">TRUST NO ONE. EXCEPT THE CAT.</span></div></section>
       ${notice ? `<div class="notice error" role="alert">${html(notice)}</div>` : ''}
       ${unreadableSave ? button('保存データを削除', 'erase', 'secondary') : ''}
-      <div class="setup-grid"><section class="panel"><div class="panel-header"><h2><span class="step">01</span>参加者</h2><span class="pill" id="name-count"></span></div>
+      <div class="setup-heading"><h2>秘密の夜を、準備する。</h2><span>GAME SETUP</span></div><div class="setup-grid"><section class="panel"><div class="panel-header"><h2>参加者</h2><span class="pill" id="name-count"></span></div>
       <label for="names">名前を1行に1人ずつ<span class="label-note">上から順番に端末を回します。名前は30文字まで。</span></label>
       <textarea id="names" placeholder="あかり&#10;はる&#10;ゆう" spellcheck="false">${html(setup.names)}</textarea>
       <button class="text-button" id="sample">9人のサンプルを入力</button></section>
-      <section class="panel"><div class="panel-header"><h2><span class="step">02</span>配役</h2><span class="pill" id="role-count"></span></div>
+      <section class="panel"><div class="panel-header"><h2>配役</h2><span class="pill" id="role-count"></span></div>
       ${Object.entries(E.ROLES).map(([id, r]) => `<div class="role-row"><img class="role-image" src="icons/${id}.svg" alt=""><label class="role-label" for="count-${id}">${r.name}<small>${r.side}</small></label><input id="count-${id}" data-role="${id}" aria-label="${r.name}の人数" type="number" inputmode="numeric" min="0" max="${['knight', 'seer', 'medium'].includes(id) ? 1 : 50}" value="${setup.counts[id]}"></div>`).join('')}
       </section></div>
       <section class="panel settings"><label for="repeat-guard"><span class="setting-line"><span>連続護衛</span><select id="repeat-guard"><option value="no" ${!setup.repeatGuard ? 'selected' : ''}>なし</option><option value="yes" ${setup.repeatGuard ? 'selected' : ''}>あり</option></select></span><span class="hint">同じ相手を続けて守れるかを選びます。</span></label>
