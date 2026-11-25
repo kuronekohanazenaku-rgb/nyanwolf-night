@@ -109,7 +109,7 @@
     const p = E.current(game);
     app.innerHTML = `${status()}<div class="progress" aria-label="完了 ${game.cursor} / ${game.queue.length} 人"><span style="width:${game.cursor / game.queue.length * 100}%"></span></div>
       ${notice ? `<p class="notice error" role="alert">${html(notice)}</p>` : ''}
-      <section class="panel handoff"><img class="handoff-cat" src="cat.svg?v=2" alt=""><p class="eyebrow">PASS THE PHONE</p><h1 class="name">${html(p.name)}<span style="font-size:.65em">さん</span></h1><p class="lede" style="margin-inline:auto">この方に端末を渡してください。</p><div class="notice">周りの人に画面が見えない状態で<br>本人だけが開いてください。</div>${button('確認・行動を始める', 'open')}<p class="pass-note">秘密をしまって、次の人へ。</p></section>${toolbar()}`;
+      <section class="panel handoff"><img class="handoff-cat" src="moonlit-cat.jpg" width="115" height="115" alt=""><p class="eyebrow">PASS THE PHONE</p><h1 class="name">${html(p.name)}<span style="font-size:.65em">さん</span></h1><p class="lede" style="margin-inline:auto">この方に端末を渡してください。</p><div class="notice">周りの人に画面が見えない状態で<br>本人だけが開いてください。</div>${button('確認・行動を始める', 'open')}<p class="pass-note">秘密をしまって、次の人へ。</p></section>${toolbar()}`;
     bind('open', 'click', () => { privateOpen = true; selected = null; selectedPoints = null; openedAt = Date.now(); render(); });
   }
   function privateInfo(p) {

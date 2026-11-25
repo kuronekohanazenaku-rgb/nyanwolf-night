@@ -19,7 +19,7 @@ body{background:var(--bg);isolation:isolate}
 .masthead{max-width:1144px;padding:25px 32px;border-bottom:1px solid #ffffff0d}
 .masthead a{gap:12px;letter-spacing:.1em;font-size:1.05rem}
 .masthead small{font-size:.75rem;letter-spacing:.08em;color:var(--muted);margin-top:1px}
-.brand-cat{width:44px;height:44px}
+.brand-cat{width:44px;height:44px;border-radius:50%;border:1px solid #d9bb7b55}
 .local-badge{font-size:.875rem;border-color:#d9bb7b40;color:var(--gold);border-radius:4px;padding:5px 13px}
 main{max-width:1144px;padding:0 32px 48px}
 h1,h2,.handoff .name,.private-role h2{font-family:'Yu Mincho','Hiragino Mincho ProN','Noto Serif JP',serif}
@@ -70,7 +70,7 @@ button:disabled{opacity:.5;filter:saturate(.35)}
 .rules{font-size:.875rem;border-color:#d9bb7b25}.rules summary{font-size:1rem}.rules li{margin-bottom:12px}
 .game-layout{max-width:728px;padding-top:36px}.status-row{margin-bottom:20px}.phase-tag{font-size:1rem;letter-spacing:.08em}
 .progress{height:3px;background:#29332e}.progress span{background:linear-gradient(90deg,#817659,var(--gold))}
-.handoff{padding:35px}.handoff-cat{width:115px;height:115px;filter:sepia(.3)}
+.handoff{padding:35px}.handoff-cat{width:115px;height:115px;object-fit:contain;mask-image:radial-gradient(ellipse at center,#000 58%,transparent 74%)}
 .handoff .name{font-weight:500;letter-spacing:.07em}.handoff .lede{font-size:1rem}
 .notice{background:#080e0e55;border-color:#4b5546;border-radius:5px;font-size:.875rem}
 .pass-note,.complete-note{font-size:.875rem}.private-heading .pill{font-size:.8125rem}
