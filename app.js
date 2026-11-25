@@ -59,7 +59,7 @@
   }
   function setupScreen() {
     app.className = '';
-    app.innerHTML = `<section class="hero cat-hero"><div class="hero-copy"><p class="eyebrow">NYANWOLF NIGHT <span>／ 秘密の人狼会</span></p><h1>今夜は、<br><em>誰が</em>化けている？</h1><p class="lede">そのまなざしに、秘密がある。<br>配役も、夜も、投票も。この1台で。</p><div class="hero-features"><span>GMレス</span><span>対面プレイ</span><span>1台で完結</span></div></div><div class="hero-art"><span class="orbit orbit-outer" aria-hidden="true"></span><span class="orbit orbit-inner" aria-hidden="true"></span><img class="hero-cat" src="cat.svg" alt="月の下で金色の目を光らせる黒猫"><span class="art-caption" aria-hidden="true">TRUST NO ONE. EXCEPT THE CAT.</span></div></section>
+    app.innerHTML = `<section class="hero cat-hero"><div class="hero-copy"><p class="eyebrow">NYANWOLF NIGHT <span>／ 秘密の人狼会</span></p><h1>今夜は、<br><em>誰が</em>化けている？</h1><p class="lede">そのまなざしに、秘密がある。<br>配役も、夜も、投票も。この1台で。</p><div class="hero-features"><span>GMレス</span><span>対面プレイ</span><span>1台で完結</span></div></div><div class="hero-art"><span class="orbit orbit-outer" aria-hidden="true"></span><span class="orbit orbit-inner" aria-hidden="true"></span><img class="hero-cat" src="cat.svg?v=2" alt="月の下で金色の目を光らせる黒猫"><span class="art-caption" aria-hidden="true">TRUST NO ONE. EXCEPT THE CAT.</span></div></section>
       ${notice ? `<div class="notice error" role="alert">${html(notice)}</div>` : ''}
       ${unreadableSave ? button('保存データを削除', 'erase', 'secondary') : ''}
       <div class="setup-heading"><h2>秘密の夜を、準備する。</h2><span>GAME SETUP</span></div><div class="setup-grid"><section class="panel"><div class="panel-header"><h2>参加者</h2><span class="pill" id="name-count"></span></div>
@@ -67,7 +67,7 @@
       <textarea id="names" placeholder="あかり&#10;はる&#10;ゆう" spellcheck="false">${html(setup.names)}</textarea>
       <button class="text-button" id="sample">9人のサンプルを入力</button></section>
       <section class="panel"><div class="panel-header"><h2>配役</h2><span class="pill" id="role-count"></span></div>
-      ${Object.entries(E.ROLES).map(([id, r]) => `<div class="role-row"><img class="role-image" src="icons/${id}.svg" alt=""><label class="role-label" for="count-${id}">${r.name}<small>${r.side}</small></label><input id="count-${id}" data-role="${id}" aria-label="${r.name}の人数" type="number" inputmode="numeric" min="0" max="${['knight', 'seer', 'medium'].includes(id) ? 1 : 50}" value="${setup.counts[id]}"></div>`).join('')}
+      ${Object.entries(E.ROLES).map(([id, r]) => `<div class="role-row"><img class="role-image" src="icons/${id}.svg?v=2" alt=""><label class="role-label" for="count-${id}">${r.name}<small>${r.side}</small></label><input id="count-${id}" data-role="${id}" aria-label="${r.name}の人数" type="number" inputmode="numeric" min="0" max="${['knight', 'seer', 'medium'].includes(id) ? 1 : 50}" value="${setup.counts[id]}"></div>`).join('')}
       </section></div>
       <section class="panel settings"><label for="repeat-guard"><span class="setting-line"><span>連続護衛</span><select id="repeat-guard"><option value="no" ${!setup.repeatGuard ? 'selected' : ''}>なし</option><option value="yes" ${setup.repeatGuard ? 'selected' : ''}>あり</option></select></span><span class="hint">同じ相手を続けて守れるかを選びます。</span></label>
       <label for="vote-tie"><span class="setting-line"><span>決選投票も同票なら</span><select id="vote-tie"><option value="random" ${setup.voteTie === 'random' ? 'selected' : ''}>ランダム処刑</option><option value="manual" ${setup.voteTie === 'manual' ? 'selected' : ''}>処刑者を選ぶ</option><option value="none" ${setup.voteTie === 'none' ? 'selected' : ''}>処刑なし</option></select></span><span class="hint">同票候補だけで決選投票を1回行い、まだ同票ならこの方法で処理します。</span></label>
@@ -105,14 +105,14 @@
     const p = E.current(game);
     app.innerHTML = `${status()}<div class="progress" aria-label="完了 ${game.cursor} / ${game.queue.length} 人"><span style="width:${game.cursor / game.queue.length * 100}%"></span></div>
       ${notice ? `<p class="notice error" role="alert">${html(notice)}</p>` : ''}
-      <section class="panel handoff"><img class="handoff-cat" src="cat.svg" alt=""><p class="eyebrow">PASS THE PHONE</p><h1 class="name">${html(p.name)}<span style="font-size:.65em">さん</span></h1><p class="lede" style="margin-inline:auto">この方に端末を渡してください。</p><div class="notice">周りの人に画面が見えない状態で<br>本人だけが開いてください。</div>${button('確認・行動を始める', 'open')}<p class="pass-note">秘密をしまって、次の人へ。</p></section>${toolbar()}`;
+      <section class="panel handoff"><img class="handoff-cat" src="cat.svg?v=2" alt=""><p class="eyebrow">PASS THE PHONE</p><h1 class="name">${html(p.name)}<span style="font-size:.65em">さん</span></h1><p class="lede" style="margin-inline:auto">この方に端末を渡してください。</p><div class="notice">周りの人に画面が見えない状態で<br>本人だけが開いてください。</div>${button('確認・行動を始める', 'open')}<p class="pass-note">秘密をしまって、次の人へ。</p></section>${toolbar()}`;
     bind('open', 'click', () => { privateOpen = true; selected = null; selectedPoints = null; openedAt = Date.now(); render(); });
   }
   function privateInfo(p) {
     let content = '';
     if (!['vote', 'runoff'].includes(game.phase)) {
       const r = E.ROLES[p.role];
-      content += `<div class="private-role"><img class="role-image" src="icons/${p.role}.svg" alt=""><div><h2>${r.name}</h2><p>${r.side}</p></div></div>`;
+      content += `<div class="private-role"><img class="role-image" src="icons/${p.role}.svg?v=2" alt=""><div><h2>${r.name}</h2><p>${r.side}</p></div></div>`;
       if (game.phase === 'deal') content += `<p class="hint">${r.description}</p>`;
       if (p.role === 'wolf' && ['deal', 'night'].includes(game.phase)) {
         const allies = game.players.filter(q => q.role === 'wolf' && q.id !== p.id);
@@ -183,7 +183,7 @@
     const abort = game.reason === 'abort';
     app.innerHTML = `${status()}<section class="panel public"><div class="seal" aria-hidden="true">☾</div><p class="eyebrow">${abort ? 'GAME STOPPED' : 'GAME OVER'}</p><h1>${abort ? 'ゲームを途中終了しました' : game.winner + 'の勝利'}</h1><p class="lede" style="margin-inline:auto">${abort ? 'このゲームに勝敗はつきません。' : 'おつかれさまでした。全員の役職を公開します。'}</p>
       ${!abort && game.event ? `<p class="event">${html(game.event)}</p>${game.event.includes('処刑') ? tally() : ''}` : ''}
-      ${game.revealed ? `<div class="end-list">${game.players.map(p => `<div class="end-player"><img class="role-image" src="icons/${p.role}.svg" alt=""><span class="end-name">${html(p.name)}<br><small>${p.alive ? '生存' : p.deathReason === 'execution' ? '処刑' : '襲撃で死亡'}</small></span><span class="role-label">${E.ROLES[p.role].name}<br><small>${E.ROLES[p.role].side}</small></span></div>`).join('')}</div>` : '<div class="notice">役職はまだ公開していません。<br>公開せずに次のゲームへ進むこともできます。</div>'}
+      ${game.revealed ? `<div class="end-list">${game.players.map(p => `<div class="end-player"><img class="role-image" src="icons/${p.role}.svg?v=2" alt=""><span class="end-name">${html(p.name)}<br><small>${p.alive ? '生存' : p.deathReason === 'execution' ? '処刑' : '襲撃で死亡'}</small></span><span class="role-label">${E.ROLES[p.role].name}<br><small>${E.ROLES[p.role].side}</small></span></div>`).join('')}</div>` : '<div class="notice">役職はまだ公開していません。<br>公開せずに次のゲームへ進むこともできます。</div>'}
       <div class="end-actions">${!game.revealed ? button('全員の役職を公開する', 'reveal', 'secondary') : ''}${button('同じ参加者で新しいゲームを準備', 'restart', 'full')}${button('新しいゲームをセット', 'fresh-game', 'secondary full')}<p class="hint">「新しいゲームをセット」は、参加者名を空にして準備し直します。</p></div></section>${toolbar()}`;
     bind('reveal', 'click', () => ask('全員の役職を公開しますか？', '公開後は、このゲームの役職を全員が確認できる状態になります。', '公開する', () => run('reveal'), 'キャンセル'));
     bind('restart', 'click', () => prepareNewGame(true));
