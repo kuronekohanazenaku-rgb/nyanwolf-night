@@ -1,12 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
-  <circle cx="100" cy="100" r="91" stroke="#bba4ed" stroke-opacity=".26"/>
-  <path d="M133 25a41 41 0 1 0 40 52 33 33 0 0 1-40-52Z" fill="#ead49a"/>
-  <path d="m49 87 3-38 30 23c11-4 24-4 35 0l30-23 3 38c10 10 15 23 13 36-2 21-17 36-39 41-14 4-32 4-46 0-22-5-37-20-39-41-2-13 3-26 10-36Z" fill="#0b0e1b" stroke="#80739e" stroke-width="2"/>
-  <path d="m58 61 17 15-19 6 2-21Zm80 0-17 15 19 6-2-21Z" fill="#695075"/>
-  <path d="M65 111c7-7 17-7 24 0-7 10-17 10-24 0Zm45 0c7-7 17-7 24 0-7 10-17 10-24 0Z" fill="#ead49a"/>
-  <path d="M77 105v13m45-13v13" stroke="#111526" stroke-width="3"/>
-  <path d="m96 127 4 4 4-4h-8Z" fill="#c3a6d2"/>
-  <path d="M100 131v4m0 0c-4 6-9 6-12 1m12-1c4 6 9 6 12 1" stroke="#c3a6d2" stroke-width="1.8" stroke-linecap="round"/>
-  <path d="m40 124 30 3m-30 10 30-3m61-7 30-3m-30 10 30 3" stroke="#80739e" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="m32 42 2-7 2 7 7 2-7 2-2 7-2-7-7-2 7-2Zm139 101 2-5 2 5 5 2-5 2-2 5-2-5-5-2 5-2Z" fill="#bba4ed"/>
+  <circle cx="100" cy="100" r="91" stroke="#d9bb7b" stroke-opacity=".22"/>
+  <path d="M137 22a42 42 0 1 0 40 53 34 34 0 0 1-40-53Z" fill="#e9cd88"/>
+  <path d="M43 97Q36 82 43 51q2-8 9-3l29 31q18-5 37 1l14-18q6-7 13-3l24 14q8 5 0 9l-13 3q15 17 13 36c-2 29-30 46-67 47-39 1-68-13-73-40q-3-17 14-31Z" fill="#12141c" stroke="#9d8598" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="m48 59 17 21-17 8q-4-14 0-29Zm81 23 10-17 24 11-14-1-6 9Z" fill="#76576d"/>
+  <path d="M49 109q14-4 38 0c-3 17-35 19-38 0Zm59 6q16 2 34-2c0 17-30 21-34 2Z" fill="#f0d895"/>
+  <path d="m47 108 41 1m19 6 37-3" stroke="#554a4c" stroke-width="3" stroke-linecap="round"/>
+  <path d="M76 111v9m42-3v9" stroke="#12141c" stroke-width="5" stroke-linecap="round"/>
+  <path d="m92 129 7 5 6-6Z" fill="#cfa5ad"/>
+  <path d="m91 146 9-6 10 5" stroke="#cfa5ad" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m30 127 27 5m-26 7 25-2m84-2 27-6m-26 13 24 3" stroke="#9d8598" stroke-width="2" stroke-linecap="round"/>
+  <path d="m31 33 2 6 6 2-6 2-2 6-2-6-6-2 6-2Zm142 107 2 5 5 2-5 2-2 5-2-5-5-2 5-2Z" fill="#d9bb7b"/>
 </svg>
